@@ -21,7 +21,7 @@ ___
 ![image](https://user-images.githubusercontent.com/52618335/196786482-eba0405a-38cf-4c47-907b-3ed8e4156435.png)
 ___
 ### How to run:
-- Open terminal. Type `git clone https://github.com/ShubhanshuJha/Analog-Clock.git` and hit enter.
+- Open terminal. Type `git clone https://github.com/anss2110/jam-kok-analog.git` and hit enter.
 - Go to the `Analog-Clock` directory.
 - Open the `index.html` file using your browser.
 
