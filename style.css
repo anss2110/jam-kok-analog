@@ -1,3 +1,19 @@
+@font-face {
+	font-family: 'RobotoSlab-Regular';
+	src: url('../fonts/RobotoSlab-Regular.ttf');
+	src: url('../fonts/RobotoSlab-Regular.ttf') format('ttf'),
+	     url('../fonts/RobotoSlab-Regular.ttf') format('truetype');
+}
+
+:root {
+    --hand-width: 0.5rem;
+    --sec-hand: 6rem;
+    --min-hand: calc(var(--sec-hand) * 0.85);
+    --hour-hand: calc(var(--sec-hand) * 0.6);
+    --clr-red: hsl(11, 79%, 49%);
+    --clr-dark: #969696;
+}
+
 body{
     background-color: #E0E0E0;
 }
@@ -40,7 +56,7 @@ body{
     box-shadow: 5px 5px 9px #a8a8a8, -5px -5px 9px #ffffff;
 }
 
-#hour, #minute, #second {
+#hand-hours, #hand-minute, #hand-second {
     position: absolute;
     border-radius: 10px;
     opacity: 0.8;
@@ -48,13 +64,13 @@ body{
     box-shadow: 1.5px 1.5px 4px #4B4B4B, -1.5px -1.5px 4px #7F7F7F;
 }
 
-#second {
+#hand-second {
     background: #D65400;
     border-radius: 10px;
     box-shadow: 1.5px 1.5px 4px #9E3E00, -1.5px -1.5px 4px #FF6A00;
 }
 
-#hour {
+#hand-hours {
     height: 26%;
     width: 1.5%;
     top: 24.4%;
@@ -64,7 +80,7 @@ body{
     transform-origin: bottom;
 }
 
-#minute {
+#hand-minute {
     height: 35%;
     width: 1.25%;
     top: 16%;
@@ -74,7 +90,7 @@ body{
     transform-origin: bottom;
 }
 
-#second {
+#hand-second {
     height: 40%;
     width: 1.2%;
     top: 10.5%;
@@ -82,4 +98,50 @@ body{
     /* opacity: 0.6; */
     /* display: none; */
     transform-origin: bottom;
+}
+
+
+.hour-number {
+    position: absolute;
+    left: 45%;
+    top: 4%;
+    height: 11rem;
+    transform-origin: bottom;
+    padding: 1rem;
+    color: var(--clr-dark);
+    user-select: none;
+    font-size: 1.4rem;
+    font-family: 'RobotoSlab-Regular', 'san-serif';
+}
+
+.minute-bar {
+    position: absolute;
+    left: 49%;
+    top: 4%;
+    width: 1rem;
+    height: 13rem;
+    transform-origin: bottom;
+    transform: rotate(20deg) translateX(-50%);
+}
+  
+.hour-number::before,
+.minute-bar::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 0px;
+    border-radius: 0px 0px 15px 15px;
+    transform: translateX(-50%);
+    background: var(--clr-dark);
+}
+  
+.hour-number::before {
+  height: 10px;
+  width: 4px;
+}
+  
+.minute-bar::before {
+  height: 6px;
+  width: 2px;
 }
